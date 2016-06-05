@@ -1,0 +1,5 @@
+var Home = {
+    initialize: function(){
+        
+    }
+}
