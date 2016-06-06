@@ -75,23 +75,25 @@ class Access extends CI_Controller {
         $this->load->library('email');
 
         //insert user
-        $res = $this->user->createNewUser($post);
+        $result = $this->user->createNewUser($post);
 
-        $body = $this->load->view('mail/register', $post, true);
-        //send mail
-        $this->email->from('root@news.loc', 'Milos Milojevic');
-        $this->email->to('milos1234@gmail.com');
-
-        $this->email->subject('Confirm Registration');
-        $this->email->message($body);
-        $res = $this->email->send();
-
-        if ($res === true){
-            ajax_result_ok('Ok.');
+        if (is_string($id_user)){
+            ajax_result_error($id_user);
         }
         else{
-            ajax_result_error('Sending mail failed!');
+            $post["id"] = $result;
         }
+        
+        $body = $this->load->view('mail/registration', $post);
+        $this->user->sendMail('info@news.loc', 
+                'News Agency', 
+                $post['email'], 
+                'Registration Confirmation',
+                $body);
+    }
+    
+    public function updatePassword($id) {
+        
     }
 
 }

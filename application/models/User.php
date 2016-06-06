@@ -39,6 +39,27 @@ class User extends CI_Model {
             ));
         }
 
+        return (int)$id_user;
+    }
+    
+    public function sendMail($from,$from_name, $to, $subject, $body) {
+        $this->load->library('PHPMailer/class.phpmailer');
+        
+        $mail = new PHPMailer;
+
+        $mail->isSendmail();                                      // Set mailer to use SMTP
+        $mail->Host = 'localhost';                 // Specify main and backup server
+        $mail->From = $from;
+        $mail->FromName = $from_name;
+        $mail->AddAddress($to);  // Add a recipient
+        $mail->IsHTML(true);                                  // Set email format to HTML
+        $mail->Subject = $subject;
+        $mail->Body    = $body;
+
+        if(!$mail->Send()) {
+           return 'Message could not be sent.';
+        }
+        
         return true;
     }
     
