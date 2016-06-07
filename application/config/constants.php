@@ -95,6 +95,7 @@ if (isset($_SERVER["SERVER_NAME"])){
 }
 
 if ( defined('WWW_PATH') ){
+    define('PUBLIC_PATH', WWW_PATH . 'public/'.APP_VERSION.'/');
     define('IMG_PATH', WWW_PATH . 'public/'.APP_VERSION.'/images/');
     define('CSS_PATH', WWW_PATH . 'public/'.APP_VERSION.'/css/');
     define('JS_PATH', WWW_PATH . 'public/'.APP_VERSION.'/js/');

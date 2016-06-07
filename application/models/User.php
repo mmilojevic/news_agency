@@ -8,14 +8,13 @@ class User extends CI_Model {
         $this->load->database();
     }
 
-    public function checkIfUserExists($email, $password) {
-        //@TODO refactoe id_
+    public function getUserIfExists($email, $password) {
         $query = "SELECT 'id_' || id as uid, name, email
                   FROM user
                   WHERE email=" . $this->db->escape($email)
                   . " AND password=" .  $this->db->escape(md5($password)) . ";";
 
-      return $this->db->query($query)->num_rows() > 0 ? true : false;
+      return $this->db->query($query)->row_array();
     }
     
     public function createNewUser($data) {
@@ -42,7 +41,6 @@ class User extends CI_Model {
     
     public function sendMail($from, $to, $subject, $body) {
         $this->load->library('PHPMailer/phpmailer');
-//        $mail = new PHPMailer;
 
         $this->phpmailer->IsSMTP();                                     
         $this->phpmailer->set('Host','127.0.0.1');    

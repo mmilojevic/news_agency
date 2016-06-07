@@ -107,9 +107,6 @@
                         <?php foreach ($pages as $page): ?>
                             <?php $this->load->view($page) ?>
                         <?php endforeach; ?>
-			<!-- FOOTER -->
-                        <?php $this->load->view('common/default/footer') ?>
-                        <!-- /FOOTER -->
 
 		</div>
 		<!-- /wrapper -->

@@ -41,7 +41,7 @@ var RegistrationConfirm = {
 
         if (self.UI.form.find('input[name="password1"]').val() 
                 !== self.UI.form.find('input[name="password2"]').val() ){
-            T.showMessage(self.UI.register_message,"Šifre nisu iste!", "error");
+            T.showMessage(self.UI.register_message,"Passwords are not same!", "error");
             return;
         }
         

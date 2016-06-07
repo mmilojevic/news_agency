@@ -2,7 +2,6 @@
 /**
  * Description of currentUser
  *
- * @TODO ukoliniti neptrebne metode
  *
  */
 class CurrentUser {

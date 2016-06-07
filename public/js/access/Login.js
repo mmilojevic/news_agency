@@ -21,7 +21,7 @@ var Login = {
         var email_value = self.UI.form.find('input[name="email"]').val();
         var password_value = self.UI.form.find('input[name="password"]').val();
         if (email_value === "" || password_value === ""){
-            self.UI.login_message.html('Email and passworm nust not be empty.');
+            self.UI.login_message.html('Email and passworm must not be empty.');
             self.UI.login_message.removeClass('hide');
             return false;
         }  

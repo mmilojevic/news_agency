@@ -31,9 +31,9 @@ class Access extends CI_Controller {
         }
 
         $this->load->model('user');
-        $user_exists = $this->user->checkIfUserExists($data["email"], $data["password"]);
+        $user = $this->user->getUserIfExists($data["email"], $data["password"]);
 
-        if ($user_exists) {
+        if (count($user) > 0) {
             CurrentUser::set($user);
             ajax_result_ok('You are successfully logged in!');
         }
@@ -45,7 +45,7 @@ class Access extends CI_Controller {
     
     public function logout() {
         CurrentUser::destroy();
-        redirect(WWW_PATH . 'access/login');
+        redirect(WWW_PATH);
     }
 
     public function register() {
@@ -92,7 +92,7 @@ class Access extends CI_Controller {
                 'Registration Confirmation',
                 $body);
         
-        ajax_result_ok('Mail is sent to your address. PLease confirm registration!');
+        ajax_result_ok('Mail is sent to your address. Please confirm registration!');
     }
     
     public function registrationConfirm($id) {

@@ -7,7 +7,7 @@ CREATE TABLE `user` (
     PRIMARY KEY (`id`) 
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-CREATE TABLE `user_post` ( 
+CREATE TABLE `post` ( 
     `id` int NOT NULL AUTO_INCREMENT, 
     `id_user` int NOT NULL, 
     `title` text NOT NULL, 

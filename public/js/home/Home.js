@@ -1,5 +1,0 @@
-var Home = {
-    initialize: function(){
-        
-    }
-}

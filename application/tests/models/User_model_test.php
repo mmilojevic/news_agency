@@ -26,8 +26,9 @@ class User_model_test extends TestCase
         $this->id_user = $this->obj->db->insert_id();
                 
         $expected = true;
-        $output = $this->obj->checkIfUserExists($this->user_data["email"], $this->user_data["password"]);
+        $output = $this->obj->getUserIfExists($this->user_data["email"], $this->user_data["password"]);
         $this->assertEquals($expected, $output);
+        $this->obj->db->where("id", $this->id_user)->delete('user');
     }
     
     public function test_createNewUser()
@@ -37,6 +38,7 @@ class User_model_test extends TestCase
         
         $expected = $this->id_user;
         $this->assertEquals($expected, $output);
+        $this->obj->db->where("id", $this->id_user)->delete('user');
     }
     
     public function test_updatePassword()
@@ -54,11 +56,19 @@ class User_model_test extends TestCase
                 ->get()->row_array()["password"];
         
         $this->assertEquals( md5($expected), $output);
-    }
-    
-    public function tearDown() {
         $this->obj->db->where("id", $this->id_user)->delete('user');
     }
+    
+    public function test_sendMail() {
+        $expected = true; 
+        $output = $this->obj->sendMail("info@news.com",  $this->user_data["email"], 'Test', 'Hello!');
+        $this->assertEquals($expected, $output);
+    }
+    
+    
+//    public function tearDown() {
+//        $this->obj->db->where("id", $this->id_user)->delete('user');
+//    }
     
 
 }

@@ -14,12 +14,6 @@ class Internal extends CI_Controller {
         $data["posts"] = $this->post->getPostsForUser(CurrentUser::getUid());
         $data["title"] = 'My Posts';
         $data["page_title"] = 'My Posts';
-        $data["jscripts"] = [JS_PATH ."internal/My_post.js"];
-        
-        $data['initializes'] = [
-            "My_post" => [""]
-        ];
-        
         $data["pages"] = [
             'internal/my_posts'
         ];
