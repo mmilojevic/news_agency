@@ -31,9 +31,9 @@ class Access extends CI_Controller {
         }
 
         $this->load->model('user');
-        $user = $this->user->check($data["email"], $data["password"]);
+        $user_exists = $this->user->checkIfUserExists($data["email"], $data["password"]);
 
-        if (count($user) !== 0) {
+        if ($user_exists) {
             CurrentUser::set($user);
             ajax_result_ok('You are successfully logged in!');
         }

@@ -8,13 +8,14 @@ class User extends CI_Model {
         $this->load->database();
     }
 
-    public function check($email, $password) {
+    public function checkIfUserExists($email, $password) {
+        //@TODO refactoe id_
         $query = "SELECT 'id_' || id as uid, name, email
                   FROM user
                   WHERE email=" . $this->db->escape($email)
                   . " AND password=" .  $this->db->escape(md5($password)) . ";";
 
-      return $this->db->query($query)->row_array();
+      return $this->db->query($query)->num_rows() > 0 ? true : false;
     }
     
     public function createNewUser($data) {
