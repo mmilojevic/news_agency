@@ -122,7 +122,6 @@ class Access extends CI_Controller {
         }
 
         $this->load->model('user');
-        $data["password"] = md5($data["password"]);
         $this->user->updatePassword($data);
         ajax_result_ok('You are successfully registered. You can now login!');
     }

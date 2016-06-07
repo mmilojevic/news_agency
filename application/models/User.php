@@ -34,6 +34,7 @@ class User extends CI_Model {
     }
     
     public function updatePassword($data) {
+        $data["password"] = md5($data["password"]);
         $this->db->where('id', $data["id"])
                 ->update('user', ["password" => $data["password"]]);
         return true;

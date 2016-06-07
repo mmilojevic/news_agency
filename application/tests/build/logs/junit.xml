@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="CodeIgniter Application Test Suite" tests="1" assertions="1" failures="0" errors="0" time="0.081402">
-    <testsuite name="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" tests="1" assertions="1" failures="0" errors="0" time="0.081402">
-      <testcase name="test_checkIfUserExists" class="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" line="20" assertions="1" time="0.081402"/>
+  <testsuite name="CodeIgniter Application Test Suite" tests="3" assertions="3" failures="0" errors="0" time="0.185294">
+    <testsuite name="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" tests="3" assertions="3" failures="0" errors="0" time="0.185294">
+      <testcase name="test_checkIfUserExists" class="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" line="21" assertions="1" time="0.070096"/>
+      <testcase name="test_createNewUser" class="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" line="33" assertions="1" time="0.056602"/>
+      <testcase name="test_updatePassword" class="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" line="42" assertions="1" time="0.058596"/>
     </testsuite>
   </testsuite>
 </testsuites>

@@ -84,6 +84,7 @@ defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
+define('APP_VERSION', '1.0');
 if (isset($_SERVER["SERVER_NAME"])){
     if ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443 )) {
         define('WWW_PATH', 'https://' . $_SERVER["SERVER_NAME"] . '/');
@@ -100,6 +101,5 @@ if ( defined('WWW_PATH') ){
     define('PLUGIN_PATH', WWW_PATH . 'public/plugins/');
 }
 
-define('APP_VERSION', '1.0');
 define('UPLOAD_PATH', BASEPATH . '../public/upload/');
 define('ERROR_MISSING_PARAMETAR', 'Parameter missing!');
