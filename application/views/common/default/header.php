@@ -24,7 +24,7 @@
 
                                 Example Usage:  class="clearfix sticky header-sm transparent noborder"
 -->
-<div id="header" class="sticky <?php echo ($this->router->class == "home") ? "transparent" : "" ?> 
+<div id="header" class="sticky 
      clearfix header-md noshadow">
 
     <!-- TOP NAV -->
@@ -62,7 +62,7 @@
                     -->
                     <ul id="topMain" class="nav nav-pills nav-main">
                         <?php if (CurrentUser::logged()): ?>
-                            <li><a class="account" href="<?= WWW_PATH ?>access/myPosts">MY POSTS</a></li>
+                            <li><a class="account" href="<?= WWW_PATH ?>internal/myPosts">MY POSTS</a></li>
                             <li><a class="login" href="<?= WWW_PATH ?>access/logout" >LOGOUT</a></li>
                         <?php else: ?>
                             <li class="">

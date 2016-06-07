@@ -304,3 +304,23 @@ if ( ! function_exists('repeater'))
 		return ($num > 0) ? str_repeat($data, $num) : '';
 	}
 }
+
+if ( ! function_exists('shrink_post'))
+{
+	/**
+	 * Repeater function
+	 *
+	 * @todo	Remove in version 3.1+.
+	 * @deprecated	3.0.0	This is just an alias for PHP's native str_repeat()
+	 *
+	 * @param	string	$data	String to repeat
+	 * @param	int	$num	Number of repeats
+	 * @return	string
+	 */
+	function shrink_post($post)
+	{
+            $post = substr($post, 0, 300);
+            $post .= '...';
+            return $post;
+	}
+}

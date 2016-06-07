@@ -48,7 +48,7 @@ var Login = {
                 }
                 else {
                     self.UI.login_message.addClass('hide');
-                    window.location.href = WWW_PATH + '/internal';
+                    window.location.href = WWW_PATH + 'internal/myPosts';
                 }
             },
             error: function(xhr) {

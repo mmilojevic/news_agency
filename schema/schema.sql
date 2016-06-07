@@ -11,7 +11,8 @@ CREATE TABLE `user_post` (
     `id` int NOT NULL AUTO_INCREMENT, 
     `id_user` int NOT NULL, 
     `title` text NOT NULL, 
-    `post` text NOT NULL, 
+    `body` text NOT NULL, 
+    `image` text NOT NULL DEFAULT '', 
     `edited` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,  
     PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

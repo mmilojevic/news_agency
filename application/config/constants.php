@@ -98,4 +98,5 @@ define('IMG_PATH', WWW_PATH . 'public/'.APP_VERSION.'/images/');
 define('CSS_PATH', WWW_PATH . 'public/'.APP_VERSION.'/css/');
 define('JS_PATH', WWW_PATH . 'public/'.APP_VERSION.'/js/');
 define('PLUGIN_PATH', WWW_PATH . 'public/plugins/');
-define('ERROR_MISSING_PARAMETAR', 'Parametar missing!');
+define('UPLOAD_PATH', BASEPATH . '../public/upload/');
+define('ERROR_MISSING_PARAMETAR', 'Parameter missing!');

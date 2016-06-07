@@ -24,19 +24,21 @@ class Access extends CI_Controller {
     }
     
     public function processLogin() {
-        $post = $this->input->post();
-        if (isset($post["email"]) === false || isset($post["name"]) === false){
+        $data = $this->input->post();
+        if (isset($data["email"]) === false || isset($data["password"]) === false){
                     ajax_result_error(ERROR_MISSING_PARAMETAR);
+                    return;
         }
 
         $this->load->model('user');
-        $user = $this->user->check($post["email"], $post["password"]);
+        $user = $this->user->check($data["email"], $data["password"]);
 
         if (count($user) !== 0) {
             CurrentUser::set($user);
+            ajax_result_ok('You are successfully logged in!');
         }
         else{
-            ajax_result_error("Email ili šifra nisu u redu!");
+            ajax_result_error("Email or password are not correct!");
         }
 
     }
@@ -65,35 +67,64 @@ class Access extends CI_Controller {
     }
 
     public function processRegister() {
-        $post = $this->input->post();
-        if (isset($post["name"]) === false || isset($post["email"]) === false){
+        $data = $this->input->post();
+        if (isset($data["name"]) === false || isset($data["email"]) === false){
                 ajax_result_error(ERROR_MISSING_PARAMETAR);
                 return;
         }
 
         $this->load->model('user');
-        $this->load->library('email');
 
         //insert user
-        $result = $this->user->createNewUser($post);
+        $result = $this->user->createNewUser($data);
 
-        if (is_string($id_user)){
-            ajax_result_error($id_user);
+        if (is_string($result)){
+            ajax_result_error($result);
+            return;
         }
         else{
-            $post["id"] = $result;
+            $data["id"] = $result;
         }
         
-        $body = $this->load->view('mail/registration', $post);
+        $body = $this->load->view('mail/registration', $data, true);
         $this->user->sendMail('info@news.loc', 
-                'News Agency', 
-                $post['email'], 
+                $data['email'], 
                 'Registration Confirmation',
                 $body);
+        
+        ajax_result_ok('Mail is sent to your address. PLease confirm registration!');
     }
     
-    public function updatePassword($id) {
+    public function registrationConfirm($id) {
+        $this->load->model('user');
+        $data["title"] = 'Registration Confirm';
+        $data["page_title"] = 'Registration Confirm';
+        $data["jscripts"] = [
+            JS_PATH ."access/RegistrationConfirm.js"
+            ];
+                
+        $data['initializes'] = [
+            "RegistrationConfirm" => [$id],
+        ];
         
+        $data["pages"] =[
+            'access/registration_confirm'
+        ];
+        $data["id"] = $id;
+        $this->load->view('template/default', $data);
+    }
+    
+    public function processRegistrationConfirm() {
+        $data = $this->input->post();
+        if (isset($data["password"]) === false || isset($data["id"]) === false){
+                ajax_result_error(ERROR_MISSING_PARAMETAR);
+                return;
+        }
+
+        $this->load->model('user');
+        $data["password"] = md5($data["password"]);
+        $this->user->updatePassword($data);
+        ajax_result_ok('You are successfully registered. You can now login!');
     }
 
 }

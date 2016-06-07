@@ -45,7 +45,3 @@
         </div>
     </div>
 </section>
-
-<script id="addon-email" type="text/x-handlebars-template">
-    <input type="text" id="{{id}}" name="{{name}}" />
-</script>

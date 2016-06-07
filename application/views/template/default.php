@@ -87,7 +87,6 @@
                                 .shadow-before-3 	= shadow 3 header top
                                 .shadow-after-3 	= shadow 3 header bottom
                         -->
-                        <?php if ($this->router->class !== "home"): ?>
                         <section class="page-header dark page-header-xs">
                                 <div class="container">
 
@@ -103,7 +102,6 @@
 
                                 </div>
                         </section>
-                        <?php endif; ?>
                         <!-- /PAGE HEADER -->
 
                         <?php foreach ($pages as $page): ?>
@@ -131,6 +129,7 @@
                 <script type="text/javascript" src="<?= PLUGIN_PATH ?>jquery-block-ui/jqueryblockui.min.js"></script>
                 <script type="text/javascript" src="<?= JS_PATH ?>addon.js"></script>
                 <script type="text/javascript" src="<?= JS_PATH ?>functions.js"></script>
+                <script type="text/javascript" src="<?= PLUGIN_PATH ?>custom.fle_upload.js"></script>
                 <?php 
                 if (isset($jscripts)):
                 foreach($jscripts as $js): ?>

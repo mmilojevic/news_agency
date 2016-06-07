@@ -49,11 +49,8 @@ var Register = {
                 }
                 else {
                     self.UI.register_message.addClass('hide');
-                    self.UI.form.find('input[type="text"]:visible,input[type="password"]:visible').val('');
-                    toastr.success('Mail is sent to your address. PLease confirm registration!');
-                    setTimeout(function () {
-                        window.location.href = WWW_PATH + "search"
-                    }, 3000);
+                    self.UI.form.find('input[type="text"]:visible').val('');
+                    toastr.success(response.message);
                 }
             },
             error: function () {
