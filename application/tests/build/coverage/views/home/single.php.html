@@ -43,14 +43,24 @@
     </thead>
     <tbody>
      <tr>
-      <td class="None">Total</td>
-      <td class="None big">&nbsp;</td>
-      <td class="None small"><div align="right"></div></td>
-      <td class="None small"><div align="right">&nbsp;</div></td>
-      <td class="None big">&nbsp;</td>
-      <td class="None small"><div align="right"></div></td>
-      <td class="None small"><div align="right">&nbsp;</div></td>
-      <td class="None small"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></td>
+      <td class="success">Total</td>
+      <td class="success big">       <div class="progress">
+         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100.00" aria-valuemin="0" aria-valuemax="100" style="width: 100.00%">
+           <span class="sr-only">100.00% covered (success)</span>
+         </div>
+       </div>
+</td>
+      <td class="success small"><div align="right"></div></td>
+      <td class="success small"><div align="right">0&nbsp;/&nbsp;0</div></td>
+      <td class="success big">       <div class="progress">
+         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100.00" aria-valuemin="0" aria-valuemax="100" style="width: 100.00%">
+           <span class="sr-only">100.00% covered (success)</span>
+         </div>
+       </div>
+</td>
+      <td class="success small"><div align="right">100.00%</div></td>
+      <td class="success small"><div align="right">0&nbsp;/&nbsp;0</div></td>
+      <td class="success small"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></td>
       <td class="danger big">       <div class="progress">
          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0.00" aria-valuemin="0" aria-valuemax="100" style="width: 0.00%">
            <span class="sr-only">0.00% covered (danger)</span>
@@ -72,7 +82,7 @@
      <tr class="danger"><td><div align="right"><a name="4"></a><a href="#4">4</a></div></td><td class="codeLine"><span class="html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&nbsp;class=&quot;blog-post-info&nbsp;list-inline&quot;&gt;</span></td></tr>
      <tr class="danger"><td><div align="right"><a name="5"></a><a href="#5">5</a></div></td><td class="codeLine"><span class="html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;</span></td></tr>
      <tr class="danger"><td><div align="right"><a name="6"></a><a href="#6">6</a></div></td><td class="codeLine"><span class="html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;i&nbsp;class=&quot;fa&nbsp;fa-clock-o&quot;&gt;&lt;/i&gt;&nbsp;</span></td></tr>
-     <tr><td><div align="right"><a name="7"></a><a href="#7">7</a></div></td><td class="codeLine"><span class="html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&nbsp;class=&quot;font-lato&quot;&gt;Date:&nbsp;</span><span class="default">&lt;?=</span><span class="default">&nbsp;</span><span class="default">$post</span><span class="keyword">[</span><span class="default">&quot;edited&quot;</span><span class="keyword">]</span><span class="default">&nbsp;</span><span class="default">?&gt;</span><span class="html">&lt;/span&gt;</span></td></tr>
+     <tr><td><div align="right"><a name="7"></a><a href="#7">7</a></div></td><td class="codeLine"><span class="html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&nbsp;class=&quot;font-lato&quot;&gt;Date:&nbsp;</span><span class="default">&lt;?=</span><span class="default">&nbsp;</span><span class="default">$post</span><span class="keyword">[</span><span class="default">&quot;edited&quot;</span><span class="keyword">]</span><span class="default">&nbsp;</span><span class="default">?&gt;</span><span class="html">,&nbsp;Author:&nbsp;</span><span class="default">&lt;?=</span><span class="default">&nbsp;</span><span class="default">$post</span><span class="keyword">[</span><span class="default">&quot;editor_name&quot;</span><span class="keyword">]</span><span class="default">&nbsp;</span><span class="default">?&gt;</span><span class="html">&nbsp;(</span><span class="default">&lt;?=</span><span class="default">&nbsp;</span><span class="default">$post</span><span class="keyword">[</span><span class="default">&quot;editor_email&quot;</span><span class="keyword">]</span><span class="default">&nbsp;</span><span class="default">?&gt;</span><span class="html">)&nbsp;&lt;/span&gt;</span></td></tr>
      <tr class="danger"><td><div align="right"><a name="8"></a><a href="#8">8</a></div></td><td class="codeLine"><span class="html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;</span></td></tr>
      <tr class="danger"><td><div align="right"><a name="9"></a><a href="#9">9</a></div></td><td class="codeLine"><span class="html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;</span></td></tr>
      <tr class="danger"><td><div align="right"><a name="10"></a><a href="#10">10</a></div></td><td class="codeLine"><span class="html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;article&nbsp;content&nbsp;--&gt;</span></td></tr>
@@ -96,7 +106,7 @@
      <span class="warning"><strong>Dead Code</strong></span>
     </p>
     <p>
-     <small>Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 2.2.2</a> using <a href="http://php.net/" target="_top">PHP 5.5.28</a> and <a href="http://phpunit.de/">PHPUnit 4.8.6</a> at Wed Jun 8 14:41:28 BST 2016.</small>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 4.0.0</a> using <a href="https://secure.php.net/" target="_top">PHP 5.6.22</a> with <a href="https://xdebug.org/">Xdebug 2.3.2</a> and <a href="https://phpunit.de/">PHPUnit 5.4.2</a> at Wed Jun 8 16:46:56 UTC 2016.</small>
     </p>
     <a title="Back to the top" id="toplink" href="#"><span class="glyphicon glyphicon-arrow-up"></span></a>
    </footer>

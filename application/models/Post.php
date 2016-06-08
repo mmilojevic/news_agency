@@ -31,7 +31,7 @@ class Post extends CI_Model{
     }
     
     public function addPost($data) {
-        $db_data["id_user"] = CurrentUser::getUid();
+        $db_data["id_user"] = $data["id_user"];
         $db_data["title"] = $data["title"];
         $db_data["body"] = $data["post"];
         $db_data["body"] = nl2br($db_data["body"]);

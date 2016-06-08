@@ -1,34 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="CodeIgniter Application Test Suite" tests="9" assertions="8" failures="1" errors="1" time="9.545851">
-    <testsuite name="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" tests="5" assertions="5" failures="0" errors="0" time="9.298855">
-      <testcase name="test_getPost" class="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" line="68" assertions="1" time="0.105195"/>
-      <testcase name="test_getLatestPosts" class="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" line="80" assertions="1" time="0.082191"/>
-      <testcase name="test_getPostsForUser" class="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" line="87" assertions="1" time="0.079967"/>
-      <testcase name="test_addPost" class="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" line="94" assertions="1" time="0.092467"/>
-      <testcase name="test_deletePost" class="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" line="109" assertions="1" time="8.939035"/>
+  <testsuite name="CodeIgniter Application Test Suite" tests="9" assertions="9" failures="0" errors="0" time="1.308029">
+    <testsuite name="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" tests="5" assertions="5" failures="0" errors="0" time="0.578816">
+      <testcase name="test_getPost" class="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" line="68" assertions="1" time="0.132331"/>
+      <testcase name="test_getLatestPosts" class="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" line="80" assertions="1" time="0.114414"/>
+      <testcase name="test_getPostsForUser" class="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" line="87" assertions="1" time="0.102939"/>
+      <testcase name="test_addPost" class="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" line="94" assertions="1" time="0.114516"/>
+      <testcase name="test_deletePost" class="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" line="109" assertions="1" time="0.114616"/>
     </testsuite>
-    <testsuite name="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" tests="4" assertions="3" failures="1" errors="1" time="0.246997">
-      <testcase name="test_checkIfUserExists" class="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" line="21" assertions="1" time="0.064490">
-        <failure type="PHPUnit_Framework_ExpectationFailedException">User_model_test::test_checkIfUserExists
-Failed asserting that 3 matches expected 1.
-
-/var/www/html/crossover/application/tests/models/User_model_test.php:30
-</failure>
-      </testcase>
-      <testcase name="test_createNewUser" class="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" line="34" assertions="1" time="0.060553"/>
-      <testcase name="test_updatePassword" class="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" line="44" assertions="1" time="0.074679"/>
-      <testcase name="test_sendMail" class="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" line="62" assertions="0" time="0.047275">
-        <error type="PHPUnit_Framework_ExceptionWrapper">User_model_test::test_sendMail
-CIPHPUnitTestShowErrorException: Unable to load the requested class: Phpmailer
-
-/var/www/html/crossover/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
-/var/www/html/crossover/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1102
-/var/www/html/crossover/application/tests/_ci_phpunit_test/replacing/core/Loader.php:218
-/var/www/html/crossover/application/models/User.php:47
-/var/www/html/crossover/application/tests/models/User_model_test.php:64
-</error>
-      </testcase>
+    <testsuite name="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" tests="4" assertions="4" failures="0" errors="0" time="0.729213">
+      <testcase name="test_checkIfUserExists" class="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" line="21" assertions="1" time="0.072034"/>
+      <testcase name="test_createNewUser" class="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" line="34" assertions="1" time="0.112965"/>
+      <testcase name="test_updatePassword" class="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" line="44" assertions="1" time="0.081483"/>
+      <testcase name="test_sendMail" class="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" line="62" assertions="1" time="0.462731"/>
     </testsuite>
   </testsuite>
 </testsuites>

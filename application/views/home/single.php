@@ -4,7 +4,7 @@
             <ul class="blog-post-info list-inline">
                 <li>
                         <i class="fa fa-clock-o"></i> 
-                        <span class="font-lato">Date: <?= $post["edited"] ?></span>
+                        <span class="font-lato">Date: <?= $post["edited"] ?>, Author: <?= $post["editor_name"] ?> (<?= $post["editor_email"] ?>) </span>
                 </li>
             </ul>
             <!-- article content -->

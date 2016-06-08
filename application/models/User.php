@@ -9,13 +9,17 @@ class User extends CI_Model {
     }
 
     public function getActiveUserIfExists($email, $password) {
-        $query = "SELECT 'id_' || id as uid, name, email
+        $query = "SELECT id as uid, name, email
                   FROM user
                   WHERE email=" . $this->db->escape($email)
                   . " AND password=" .  $this->db->escape(md5($password)) 
                   . " AND active ='t';";
-
-      return $this->db->query($query)->row_array();
+        $res = $this->db->query($query)->row_array();
+        
+        //this has to be done because of session problems
+        $res["uid"] = 'id_' . $res["uid"];
+                
+        return $res;
     }
     
     public function createNewUser($data) {

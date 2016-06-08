@@ -63,6 +63,9 @@ var RegistrationConfirm = {
                     self.UI.register_message.addClass('hide');
                     self.UI.form.find('input[type="password"]:visible').val('');
                     toastr.success(response.message);
+                    setTimeout(function () {
+                        window.location.href = WWW_PATH + "access/login"
+                    }, 2000);
                 }
             },
             error: function () {

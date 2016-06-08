@@ -24,6 +24,7 @@ class Internal extends CI_Controller {
         $this->load->model('post');
         $data = $this->input->post();
         $data["image_name"] =  $_FILES["image"]["name"];
+        $data["id_user"] =  CurrentUser::getUid();;
         $new_image_name = $this->post->addPost($data);
         
         $tmp_name = $_FILES["image"]["tmp_name"];
