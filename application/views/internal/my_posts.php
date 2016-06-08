@@ -32,7 +32,7 @@
                                 <img width="300" height="300" alt="" class="img-responsive" src="<?= WWW_PATH . 'public/upload/' . $post["image"] ?>">
                         </div>
                         <div class="col-md-8">
-                                <small class="block"><?= $post["edited"] ?></small>
+                            <small class="block"><?= $post["edited"] ?>, <?= CurrentUser::getName() ?> (<?= CurrentUser::getEmail() ?>)</small>
                                 <h4><a href="<?= WWW_PATH . 'home/single/' . $post["id"] ?>"><?= $post["title"] ?></a></h4> 
                                 <p>
                                         <?= shrink_post($post["body"]) ?>

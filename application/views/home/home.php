@@ -9,7 +9,7 @@
                                 <img  alt="" class="img-responsive" src="<?= WWW_PATH . 'public/upload/' . $post["image"] ?>">
                         </div>
                         <div class="col-md-8">
-                                <small class="block"><?= $post["edited"] ?></small>
+                                <small class="block"><?= $post["edited"] ?>, <?= $post["editor_name"] ?> (<?= $post["editor_email"] ?>)</small>
                                 <h4><a target="_blank" href="<?= WWW_PATH . 'home/single/' . $post["id"] ?>"><?= $post["title"] ?></a></h4> 
                                 <p>
                                         <?= shrink_post($post["body"]) ?>

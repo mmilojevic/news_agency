@@ -25,9 +25,9 @@ class User_model_test extends TestCase
         $this->obj->db->insert('user',$db_insert_data);
         $this->id_user = $this->obj->db->insert_id();
                 
-        $expected = true;
-        $output = $this->obj->getUserIfExists($this->user_data["email"], $this->user_data["password"]);
-        $this->assertEquals($expected, $output);
+        $expected = 3;
+        $output = $this->obj->getActiveUserIfExists($this->user_data["email"], $this->user_data["password"]);
+        $this->assertEquals($expected, count($output));
         $this->obj->db->where("id", $this->id_user)->delete('user');
     }
     

@@ -8,11 +8,12 @@ class User extends CI_Model {
         $this->load->database();
     }
 
-    public function getUserIfExists($email, $password) {
+    public function getActiveUserIfExists($email, $password) {
         $query = "SELECT 'id_' || id as uid, name, email
                   FROM user
                   WHERE email=" . $this->db->escape($email)
-                  . " AND password=" .  $this->db->escape(md5($password)) . ";";
+                  . " AND password=" .  $this->db->escape(md5($password)) 
+                  . " AND active ='t';";
 
       return $this->db->query($query)->row_array();
     }
@@ -35,7 +36,10 @@ class User extends CI_Model {
     public function updatePassword($data) {
         $data["password"] = md5($data["password"]);
         $this->db->where('id', $data["id"])
-                ->update('user', ["password" => $data["password"]]);
+                ->update('user', [
+                    "password" => $data["password"],
+                    "active" => 't'
+                        ]);
         return true;
     }
     

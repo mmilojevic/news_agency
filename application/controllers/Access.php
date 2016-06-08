@@ -31,7 +31,7 @@ class Access extends CI_Controller {
         }
 
         $this->load->model('user');
-        $user = $this->user->getUserIfExists($data["email"], $data["password"]);
+        $user = $this->user->getActiveUserIfExists($data["email"], $data["password"]);
 
         if (count($user) > 0) {
             CurrentUser::set($user);
