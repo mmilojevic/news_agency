@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="CodeIgniter Application Test Suite" tests="9" assertions="9" failures="0" errors="0" time="1.308029">
-    <testsuite name="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" tests="5" assertions="5" failures="0" errors="0" time="0.578816">
-      <testcase name="test_getPost" class="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" line="68" assertions="1" time="0.132331"/>
-      <testcase name="test_getLatestPosts" class="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" line="80" assertions="1" time="0.114414"/>
-      <testcase name="test_getPostsForUser" class="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" line="87" assertions="1" time="0.102939"/>
-      <testcase name="test_addPost" class="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" line="94" assertions="1" time="0.114516"/>
-      <testcase name="test_deletePost" class="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" line="109" assertions="1" time="0.114616"/>
+  <testsuite name="CodeIgniter Application Test Suite" tests="8" assertions="8" failures="0" errors="0" time="0.963072">
+    <testsuite name="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" tests="5" assertions="5" failures="0" errors="0" time="0.595366">
+      <testcase name="test_getPost" class="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" line="68" assertions="1" time="0.145698"/>
+      <testcase name="test_getLatestPosts" class="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" line="80" assertions="1" time="0.118000"/>
+      <testcase name="test_getPostsForUser" class="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" line="87" assertions="1" time="0.101595"/>
+      <testcase name="test_addPost" class="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" line="94" assertions="1" time="0.117356"/>
+      <testcase name="test_deletePost" class="Post_model_test" file="/var/www/html/crossover/application/tests/models/Post_model_test.php" line="109" assertions="1" time="0.112717"/>
     </testsuite>
-    <testsuite name="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" tests="4" assertions="4" failures="0" errors="0" time="0.729213">
-      <testcase name="test_checkIfUserExists" class="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" line="21" assertions="1" time="0.072034"/>
-      <testcase name="test_createNewUser" class="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" line="34" assertions="1" time="0.112965"/>
-      <testcase name="test_updatePassword" class="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" line="44" assertions="1" time="0.081483"/>
-      <testcase name="test_sendMail" class="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" line="62" assertions="1" time="0.462731"/>
+    <testsuite name="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" tests="3" assertions="3" failures="0" errors="0" time="0.367706">
+      <testcase name="test_checkIfUserExists" class="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" line="22" assertions="1" time="0.099416"/>
+      <testcase name="test_updatePassword" class="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" line="45" assertions="1" time="0.092656"/>
+      <testcase name="test_sendMail" class="User_model_test" file="/var/www/html/crossover/application/tests/models/User_model_test.php" line="64" assertions="1" time="0.175634"/>
     </testsuite>
   </testsuite>
 </testsuites>

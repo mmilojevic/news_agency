@@ -39,31 +39,30 @@ class User extends CI_Model {
     
     public function updatePassword($data) {
         $data["password"] = md5($data["password"]);
-        $this->db->where('id', $data["id"])
+        return $this->db->where('id', $data["id"])
                 ->update('user', [
                     "password" => $data["password"],
                     "active" => 't'
                         ]);
-        return true;
     }
     
-    public function sendMail($from, $to, $subject, $body) {
-        $this->load->library('PHPMailer/phpmailer');
+    public function sendMail($phpmailer, $from, $to, $subject, $body) {
 
-        $this->phpmailer->IsSMTP();                                     
-        $this->phpmailer->set('Host','127.0.0.1');    
-        $this->phpmailer->set('Port','1025'); 
-        $this->phpmailer->set('From',$from); 
-        $this->phpmailer->AddAddress($to);  
-        $this->phpmailer->IsHTML(true);                                  
-        $this->phpmailer->set('Subject',$subject); 
-        $this->phpmailer->set('Body',$body); 
+        $phpmailer->IsSMTP();                                     
+        $phpmailer->set('Host','127.0.0.1');    
+        $phpmailer->set('Port','1025'); 
+        $phpmailer->set('From',$from); 
+        $phpmailer->AddAddress($to);  
+        $phpmailer->IsHTML(true);                                  
+        $phpmailer->set('Subject',$subject); 
+        $phpmailer->set('Body',$body); 
 
-        if(!$this->phpmailer->Send()) {
+        $result = $phpmailer->Send();
+        if(!$result) {
            return 'Message could not be sent.';
         }
         
-        return true;
+        return $result;
     }
     
 }

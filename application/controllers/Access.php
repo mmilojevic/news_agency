@@ -21,6 +21,7 @@ class Access extends CI_Controller {
             'access/login'
         ];
         $this->load->view('template/default', $data);
+        return $data;
     }
     
     public function processLogin() {
@@ -68,6 +69,7 @@ class Access extends CI_Controller {
 
     public function processRegister() {
         $data = $this->input->post();
+        $this->load->library('PHPMailer/phpmailer');
         if (isset($data["name"]) === false || isset($data["email"]) === false){
                 ajax_result_error(ERROR_MISSING_PARAMETAR);
                 return;
